@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>js04_Salario01.htm</title>
+</head>
+<body>
+	<script type="text/javascript">
+	<!--
+		/* Objetivo: Calcular o salário de um funcionário que trabalha por hora 
+		- Para desenvolver o cálculo é necessário ter as seguintes informações:
+				-Qunatidade de horas trabalhadas no mês (h)
+				-Valor da hora de trabalho (v)
+				-Percentual de desconto do INSS (d)
+		-Informar a classificação Salarial
+		*/
+
+		/* Definição das Variáveis */
+		var h; // Quantidade de horas trabalhadas
+		var v; // Valor por hora trabalhada
+		var d; // Percentual de desconto INSS
+		var td; // Total de Desconto
+		var slb; // Salário Bruto
+		var sll; // Salário Líquido
+
+		/* Entrada de Dados */
+		h = parseFloat(window.prompt('Informe a quantidade de horas Trabalhadas/Mês: (135 a 180)','00'));
+		v = parseFloat(window.prompt('Informe o Valor da Hora Trabalhada: (25 a 50)','00'));
+		d = parseFloat(window.prompt('Informe o Pencentual de Desconto INSS: (5 a 15)','00'));
+
+		/* Processamento de Dados */
+		slb = h * v;
+		td = (d/100) * slb;
+		sll= slb - td;
+
+		/* Saída de Dados Consistencia de Valores */
+		if (h > 180) {
+			document.write('...(<b> Valor Máximo Excedido!</b>)');
+		}
+		if (h < 135) {
+			document.write('...(<b> Valor Mínimo Inválido!</b>)');
+		}
+		if (v > 50) {
+			document.write('...(<b> Valor Máximo Excedido!</b>)');
+		}
+		if (v < 25) {
+			document.write('...(<b> Valor Mínimo Inválido!</b>)');
+		}
+		if (d > 15) {
+			document.write('...(<b> Valor Máximo Excedido!</b>)');
+		}
+		if (d < 5) {
+			document.write('...(<b> Valor Mínimo Inválido!</b>)');
+		}
+		else {
+			document.write(' Salário Bruto: ' + slb);
+			document.write(' Total de Desconto INSS: ' + td);
+			document.write(' Salário Líquido: ' + sll);
+
+			/* Avaliar a valor de seu salário */	
+			if (sll > 10500) {
+				document.write(' Salário Elevado!');
+			}
+			if (sll > 6000) {
+				document.write(' Salário Satisfatório!');
+			}
+			if (sll > 3000) {
+				document.write(' Salário Moderado!');	
+			}
+			else {
+				document.write(' Salário Insatisfatório!');
+			}		
+		}
+
+	//-->
+	</script>
+
+</body>
+</html>
