@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>js03_soma2 - outra forma de fazer </title>
+</head>
+
+<body>
+
+	<!-- Definição da área e dos elemento de um Formulário -->
+	<form name="MeuFormulario" action=" " method="post">
+		Entre com o valor 1: <input type="text" name="f_n1" /><p></p>
+		Entre com o valor 2: <input type="text" name="f_n2" /><p></p>
+		<input type="button" name="btn_somar" value="Somar" onclick="soma()" />
+		<input type="reset" name="btn_apagar" value="Apagar" />
+	</form>
+	<!-- Final da área de um Formulário -->
+
+	<script type="text/javascript">
+	<!--
+		/* Objetivo: Receber dois números e somar eles */
+
+		/* Definição das variáveis */
+		var js_n1;
+		var js_n2;
+		var js_soma;
+
+		/* Definição da função soma() para capturar dados, processar somatória e aprensentar o resultado */
+		function soma() {
+			
+			/* Entrada de Dados */
+			js_n1 = parseInt(document.MeuFormulario.f_n1.value);
+			js_n2 = parseInt(document.MeuFormulario.f_n2.value);
+
+			/* Processamento  de Dados */
+			js_soma = js_n1 + js_n2;
+
+			/* Saída de Dados */
+			window.alert('Resultado da Somatória = ' + js_soma.toString());	
+		}
+		//-->
+
+	</script>
+</body>
+</html>
